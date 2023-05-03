@@ -18,23 +18,23 @@ class MyApp extends StatelessWidget {
             body: const Column(
                 children:  [
                 Flexible(flex:2, child: MyProfile(),),
-                 Flexible(flex:4, child: MyPosts(), ),
+                 Flexible(flex:5, child: MyPosts(), ),
                 ],
             ),
               bottomNavigationBar:   BottomNavigationBar(
-                backgroundColor: Colors.grey,
+                backgroundColor: Colors.white.withOpacity(0.2),
             items:const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: 35,),
+                icon: Icon(Icons.home_outlined, size: 35, color:Colors.white),
                  label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.add_circle_outline_outlined, size: 35,),
-                 label: '',
+                icon: Icon(Icons.add_circle_outline_outlined, size: 35, color:Colors.white),
+                 label:  '',
                
               ),
                   BottomNavigationBarItem(
-                icon: Icon(Icons.save_alt_rounded, size: 35,),
+                icon: Icon(Icons.save_alt_rounded, size: 35, color: Colors.white,),
                  label: '',
                
               ),
