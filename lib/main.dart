@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const Column(
-        children:  [
-          MyProfile(),
-          MyPosts(),
-        ],
+    return  SafeArea(
+      child: const  MaterialApp(
+          home:  Column(
+              children:  [
+              Flexible(child: MyProfile(),flex:1,),
+               Flexible(child: MyPosts(),flex:2, ),
+            
+                
+              ],
+          ),
+        ),
+      
     );
   }
 }
@@ -26,14 +36,14 @@ class MyProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(textDirection: TextDirection.ltr, 
-    child: Column( 
-      mainAxisAlignment: MainAxisAlignment.start,
+    child: Wrap( 
+
       children: [ 
           Stack(
             children: [
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 220,
                 decoration: const BoxDecoration(
                   image:  DecorationImage(
                     image: AssetImage("assets/shot.jpg"),
@@ -43,7 +53,7 @@ class MyProfile extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 300,
+                height:220,
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.2),    
                 ),
@@ -57,10 +67,10 @@ class MyProfile extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              const SizedBox(
                 width:double.infinity,
-                height:300,
-                child: const Column(
+                height: 220,
+                child: Column(
                   children: [
                      ProfileInfo(),
                   ],
@@ -100,19 +110,20 @@ class ProfileInfo extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+             SizedBox(height: 10,),
+
             Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius:58,
-                  backgroundImage: NetworkImage("assets/profilepic.jpg"),
+                  radius:43,
+                  backgroundImage: AssetImage("assets/profilepic.jpg"),
                 ),
-                SizedBox(height: 20,),
-                Text('John Blayne', style: TextStyle(color:Colors.white, fontSize: 18) ,),
-                SizedBox(height: 20,),
+                SizedBox(height: 10,),
+                Text('John Blayne', style: TextStyle(color:Colors.white, fontSize: 16) ,),
+                SizedBox(height: 10,),
 
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -120,25 +131,26 @@ class ProfileInfo extends StatelessWidget {
                     Row(
                       
                      children: [
-                        Icon(Icons.people, size: 20,color: Colors.grey),
+                        Icon(Icons.people, size: 16,color: Colors.grey),
                          SizedBox(width: 5,),
-                        Text("600 Followers", style: TextStyle(color:Colors.white) ,),
+                        Text("600 Followers", style: TextStyle(color:Colors.white, fontSize: 12) ,),
                       
                       ],
                     
                      ),
                   SizedBox(
-                    height: 20,
+                    height: 18,
                     child: VerticalDivider(
                         thickness: 1,
                         width: 40,
                         color: Colors.grey,
                     ),
-                  ),                     Row(
+                  ),                   
+                    Row(
                       children: [
-                        Icon(Icons.people, size: 20,color: Colors.grey),
+                        Icon(Icons.people, size: 16,color: Colors.grey),
                          SizedBox(width: 5,),
-                        Text("150 Following", style: TextStyle(color:Colors.white) ,),
+                        Text("150 Following", style: TextStyle(color:Colors.white, fontSize: 12) ,),
                       
                       ],
                     
@@ -156,17 +168,51 @@ class ProfileInfo extends StatelessWidget {
   }
 }
 
-class MyPosts extends StatelessWidget {
+class MyPosts extends StatefulWidget {
   const MyPosts({super.key});
 
   @override
+  State<MyPosts> createState() => _MyPostsState();
+}
+
+class _MyPostsState extends State<MyPosts> {
+
+  final List<String> _listItem = [
+    'assets/one.jpg',
+    'assets/two.jpg',
+    'assets/three.jpg',
+    'assets/four.jpg',
+    'assets/five.jpg',
+    'assets/six.jpg',
+    'assets/one.jpg',
+    'assets/two.jpg',
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        
-        home:  Scaffold(
-        //Here you can set what ever background color you need.
-          backgroundColor: Colors.black,
-        ),
-      );
+    return   Container(
+            height: double.infinity,
+            color: Colors.grey.shade900,
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.symmetric(vertical:30, horizontal: 35),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: _listItem.map((item) => Card(
+                color:Colors.transparent,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                      image: AssetImage(item),
+                      fit:BoxFit.cover
+                    ),
+                  ) ,
+                ) ,
+              )).toList(),
+              ),
+              
+              );
+      
   }
 }
