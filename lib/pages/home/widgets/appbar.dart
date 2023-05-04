@@ -12,11 +12,10 @@ class MyAppBar extends StatelessWidget {
                      mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
+                    IconButton(
                         icon: Icon(Icons.menu,  color: Colors.white,),
                         onPressed:null,    
                         ),
-                      
                     ],
                   ),
               
