@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_layouts/pages/home/widgets/appbar.dart';
+import 'package:flutter_layouts/pages/home/widgets/home-posts.dart';
 import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
 
 
@@ -21,60 +22,44 @@ class Home extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
     MyHomePage({super.key});
  
-  final List<BottomNavigationBarItem> _bottomNavBarItems = [
-   const BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: 'Home',
-    ),
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: 'Settings',
-    ),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
     return  Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60.0),
-            child: AppBar(
-              backgroundColor: Colors.grey[850],
-              leading:
-                  const Column(
-                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                      
-                      icon: Icon(Icons.menu,  color: Colors.white,),
-                      onPressed:null,    
-                      ),
-                    ],
-                  ),
-              
-              actions: const [
-                     IconButton(
-                    icon: Icon(Icons.notifications, color: Colors.white,),
-                    onPressed:null,
-                    ),
-                      IconButton(
-                  icon: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/profilepic.jpg'),
-                  ),
-                  onPressed:null,
-                          ),
-                  ],
-                
-              
-            ),
+        appBar: const PreferredSize(
+          preferredSize:  Size.fromHeight(60.0),
+            child: MyAppBar(),
           
         ),
-        body:  Container(  color: Colors.amber ,height: MediaQuery.of(context).size.height, width:double.infinity ,child: Text("hello world!",textDirection: TextDirection.ltr)),
-        bottomNavigationBar: MyBottomNavigationBar (),
+        body:  Container( 
+          color: Colors.grey[850] ,
+          height: double.infinity,
+          width:double.infinity ,
+          child: HomePageContent(),
         ),
-      );
+         bottomNavigationBar: MyBottomNavigationBar (),
+
+      ),);
     
+  }
+}
+
+class HomePageContent extends StatelessWidget {
+  const HomePageContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const  Padding(padding:  EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text("Hello", style: TextStyle(color: Colors.grey, fontSize: 18.0,),),
+               Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 24.0)),
+              Expanded(child: HomePosts()),
+            ],
+          ),);
   }
 }
