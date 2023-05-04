@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
+
   google_nav_bar: ^5.0.6
 
 
@@ -58,15 +58,15 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets :
-     - assets/shot1.png 
-     - assets/shot.jpg
-     - assets/profilepic.jpg
-     - assets/one.jpg
-     - assets/two.jpg
-     - assets/three.jpg
-     - assets/four.jpg
-     - assets/five.jpg
-     - assets/six.jpg
+     - assets/images/shot1.png 
+     - assets/images/shot.jpg
+     - assets/images/profilepic.jpg
+     - assets/images/one.jpg
+     - assets/images/two.jpg
+     - assets/images/three.jpg
+     - assets/images/four.jpg
+     - assets/images/five.jpg
+     - assets/images/six.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
