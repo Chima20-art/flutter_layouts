@@ -13,7 +13,7 @@ class MyBottomNavigationBar extends StatelessWidget {
     return         Container(
                       color: Colors.black,
                        child: Glassmorphism(
-                        blur: 150,
+                        blur: 100,
                         child: GNav(
                                      color: Colors.white,
                                      activeColor: Colors.white,
