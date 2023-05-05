@@ -1,13 +1,16 @@
 
 import 'package:flutter/material.dart';
-import 'dart:ui';
-import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'glassmorphism.dart';
 
-class MyBottomNavigationBar extends StatelessWidget {
+class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
 
+  @override
+  State<MyBottomNavigationBar> createState() => _MyBottomNavigationBarState();
+}
+
+class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return         Container(

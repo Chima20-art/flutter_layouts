@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
-import 'package:get/get.dart';
 
 class HomePosts extends StatefulWidget {
   const HomePosts({super.key});
@@ -31,7 +29,7 @@ class _MyHomePostsState extends State<HomePosts> {
           children: [
             const Text("Hello", style: TextStyle(color: Colors.grey, fontSize: 18.0,),),
             const  Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 24.0)),
-             Container(
+             SizedBox(
               height:230,
               child: 
                   GridView.count( 
@@ -56,14 +54,14 @@ class _MyHomePostsState extends State<HomePosts> {
                           children: [
                             Row(
                               children: [
-                                Text(item['views']!,style: TextStyle(color: Colors.white),),
+                                Text(item['views']!,style: const TextStyle(color: Colors.white),),
                                 const SizedBox(width: 5,),
                                 const  Icon(Icons.remove_red_eye, color: Colors.white, size: 13,)
                               ],
                             ),
                               Row(
                               children: [
-                                Text(item['likes']!,style: TextStyle(color: Colors.white),),
+                                Text(item['likes']!,style:const  TextStyle(color: Colors.white),),
                                 const SizedBox(width: 5,),
                                 const Icon(Icons.heart_broken_rounded, color: Colors.white, size: 13,)
                               ],
@@ -74,7 +72,7 @@ class _MyHomePostsState extends State<HomePosts> {
                        Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(item['description']?? "", style: TextStyle(color: Colors.white, fontSize: 16),)
+                          Text(item['description']?? "", style:const  TextStyle(color: Colors.white, fontSize: 16),)
                        ],) 
                         ],
                       ),
@@ -113,7 +111,7 @@ class _MyHomePostsState extends State<HomePosts> {
                                   onPressed: () {
                                     // Add your Go pro button functionality here
                                   },
-                                  child: Text('Go pro'),
+                              
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.black,
                                     padding:const  EdgeInsets.symmetric(horizontal: 25,vertical: 10),
@@ -121,7 +119,9 @@ class _MyHomePostsState extends State<HomePosts> {
                                       borderRadius: BorderRadius.circular(10),
                                       
                                     ),
+                                    
                                   ),
+                                   child:const  Text('Go pro'),
                                 ),
                               
                             ],
@@ -158,14 +158,14 @@ class _MyHomePostsState extends State<HomePosts> {
                           children: [
                             Row(
                               children: [
-                                Text(item['views']!,style: TextStyle(color: Colors.white),),
+                                Text(item['views']!,style:const TextStyle(color: Colors.white),),
                                 const SizedBox(width: 5,),
                                 const  Icon(Icons.remove_red_eye, color: Colors.white, size: 13,)
                               ],
                             ),
                             Row(
                               children: [
-                                Text(item['likes']!,style: TextStyle(color: Colors.white),),
+                                Text(item['likes']!,style:const TextStyle(color: Colors.white),),
                                 const SizedBox(width: 5,),
                                 const Icon(Icons.heart_broken_rounded, color: Colors.white, size: 13,)
                               ],
@@ -176,7 +176,7 @@ class _MyHomePostsState extends State<HomePosts> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(item['description']?? "", style: TextStyle(color: Colors.white, fontSize: 16),)
+                            Text(item['description']?? "", style:const  TextStyle(color: Colors.white, fontSize: 16),)
                           ],
                         ),
                       ],

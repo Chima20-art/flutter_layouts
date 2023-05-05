@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:get/get.dart';
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});

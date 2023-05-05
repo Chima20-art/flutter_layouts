@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layouts/pages/home/widgets/appbar.dart';
-import 'package:flutter_layouts/pages/home/widgets/home-posts.dart';
-
-
+import 'package:flutter_layouts/pages/home/widgets/home_posts.dart';
 
 class Home extends StatelessWidget {
- const Home({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MyApp',
-      theme: ThemeData(
-        
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-   const  MyHomePage({super.key});
+   const  
+   Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +22,6 @@ class MyHomePage extends StatelessWidget {
           width:double.infinity ,
           child: const  HomePageContent(),
         ),
-
       ),);
     
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
-import 'package:get/get.dart';
+
 
 class MyPosts extends StatefulWidget {
   const MyPosts({super.key});
@@ -59,14 +58,14 @@ class _MyPostsState extends State<MyPosts> {
                         children: [
                           Row(
                             children: [
-                              Text(item['views']!,style: TextStyle(color: Colors.white),),
+                              Text(item['views']!,style:const TextStyle(color: Colors.white),),
                               const SizedBox(width: 5,),
                               const  Icon(Icons.remove_red_eye, color: Colors.white, size: 13,)
                             ],
                           ),
                             Row(
                             children: [
-                              Text(item['likes']!,style: TextStyle(color: Colors.white),),
+                              Text(item['likes']!,style:const TextStyle(color: Colors.white),),
                               const SizedBox(width: 5,),
                               const Icon(Icons.heart_broken_rounded, color: Colors.white, size: 13,)
                             ],

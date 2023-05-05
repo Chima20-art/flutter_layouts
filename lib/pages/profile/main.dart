@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/myprofile.dart';
 import 'widgets/posts.dart';
-import '../widgets/navigation_bar.dart';
+import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
 
 
 class Profile extends StatelessWidget {
@@ -24,8 +24,9 @@ class Profile extends StatelessWidget {
                      ],
                       ),
                  ),
-          
+
           ),
+          
           ),
         );
   }
