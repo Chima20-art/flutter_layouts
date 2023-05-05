@@ -29,51 +29,58 @@ class _MyPostsState extends State<MyPosts> {
   @override
   Widget build(BuildContext context) {
     debugPrint(_listItem.toString());
-    return   Container(
-            height: double.infinity,
-            color: Colors.black,
-            child: GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.symmetric(vertical:30, horizontal: 30),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 15,
-              childAspectRatio: (1 / 1.17),
-              children: _listItem.map((item) => Card(
-              color:  Colors.transparent,
-                child:  Column(
-                  children: [
-                    Expanded(
-                    child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(item['image'] ?? "",fit: BoxFit.cover, height: 100.0,),
+    return   SingleChildScrollView(
+       scrollDirection: Axis.vertical,
+      
+   child: Container(
+     color: Colors.grey.shade900,
+     child: GridView.count(
+                   physics: const NeverScrollableScrollPhysics(), 
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  padding: const EdgeInsets.symmetric(vertical:30, horizontal: 30),
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 15,
+                  childAspectRatio: (1 / 1.17),
+                  children: _listItem.map((item) => Card(
+                  color:  Colors.transparent,
+                    child:  Column(
+                      children: [
+                        Expanded(
+                        child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.asset(item['image'] ?? "",fit: BoxFit.cover, height: 100.0,),
+                        ),
                     ),
-                ),
-                  const SizedBox(height: 10,),
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
+                      const SizedBox(height: 10,),
+                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(item['views']!,style: TextStyle(color: Colors.white),),
-                          const SizedBox(width: 5,),
-                          const  Icon(Icons.remove_red_eye, color: Colors.white, size: 13,)
+                          Row(
+                            children: [
+                              Text(item['views']!,style: TextStyle(color: Colors.white),),
+                              const SizedBox(width: 5,),
+                              const  Icon(Icons.remove_red_eye, color: Colors.white, size: 13,)
+                            ],
+                          ),
+                            Row(
+                            children: [
+                              Text(item['likes']!,style: TextStyle(color: Colors.white),),
+                              const SizedBox(width: 5,),
+                              const Icon(Icons.heart_broken_rounded, color: Colors.white, size: 13,)
+                            ],
+                          ),
                         ],
                       ),
-                        Row(
-                        children: [
-                          Text(item['likes']!,style: TextStyle(color: Colors.white),),
-                          const SizedBox(width: 5,),
-                          const Icon(Icons.heart_broken_rounded, color: Colors.white, size: 13,)
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
+                  )).toList(),
                   ),
-                  ],
-                ),
-              )).toList(),
-              ),
-              
-              );
+   ),
+                
+                
+    );
       
   }
 }

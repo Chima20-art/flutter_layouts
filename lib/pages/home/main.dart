@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layouts/pages/home/widgets/appbar.dart';
 import 'package:flutter_layouts/pages/home/widgets/home-posts.dart';
-import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
 
 
 
 class Home extends StatelessWidget {
+ const Home({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,15 +14,13 @@ class Home extends StatelessWidget {
       theme: ThemeData(
         
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-    MyHomePage({super.key});
- 
-
+   const  MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +38,6 @@ class MyHomePage extends StatelessWidget {
           width:double.infinity ,
           child: const  HomePageContent(),
         ),
-         bottomNavigationBar:const  MyBottomNavigationBar (),
 
       ),);
     
@@ -53,13 +50,8 @@ class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  const  Padding(padding:  EdgeInsets.only(top: 20.0, left: 35.0,right:35.0,),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               Text("Hello", style: TextStyle(color: Colors.grey, fontSize: 18.0,),),
-               Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 24.0)),
+          child:
                Expanded(child: HomePosts()),
-            ],
-          ),);
+          );
   }
 }

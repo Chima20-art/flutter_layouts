@@ -27,7 +27,10 @@ class _MyHomePostsState extends State<HomePosts> {
     debugPrint(_listItem.toString());
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Text("Hello", style: TextStyle(color: Colors.grey, fontSize: 18.0,),),
+            const  Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 24.0)),
              Container(
               height:230,
               child: 
