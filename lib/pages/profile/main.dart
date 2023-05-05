@@ -17,7 +17,7 @@ class _ProfileState extends State<Profile> {
 
   final List<Widget> _widgetOptions = [
   const   ProfileContent(),
-   const Center(child: Text("Coming soon")),
+   Container(color: Colors.grey[850],child: const Center(child: Text("Coming soon ...", style: TextStyle(color: Colors.white),))),
   ];
 
   // This widget is the root of your application.
