@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
                  
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home())
+                    MaterialPageRoute(builder: (context) => const Home())
                   );
               }
             },

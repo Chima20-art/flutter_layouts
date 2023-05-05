@@ -31,7 +31,7 @@ class MyAppBar extends StatelessWidget {
                         onTap: () {
                             Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Profile()),
+                            MaterialPageRoute(builder: (context) => const Profile()),
                           );
                         },
                         child: const  IconButton(

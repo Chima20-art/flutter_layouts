@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_layouts/pages/widgets/glassmorphism.dart';
-import 'pages/profile/main.dart';
 import 'pages/home/main.dart';
-import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 
 
@@ -24,7 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  static int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = [
       Home(),
