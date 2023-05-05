@@ -4,13 +4,22 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'glassmorphism.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
-  const MyBottomNavigationBar({super.key});
+
+  final int selectedIndex;
+  final Function(int) onTabChange;
+
+  const MyBottomNavigationBar({
+    Key? key,
+    required this.selectedIndex,
+    required this.onTabChange,
+     }): super(key: key);
 
   @override
   State<MyBottomNavigationBar> createState() => _MyBottomNavigationBarState();
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
+
   @override
   Widget build(BuildContext context) {
     return         Container(
@@ -39,7 +48,14 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                         icon: Icons.favorite_border,
                         text:'favorites'
                         ),
-                                     ],),
+                      ],
+                      selectedIndex: widget.selectedIndex,
+                      onTabChange: widget.onTabChange,
+
+                        
+                      
+                      
+                    ),
                                        ),
                      );
         
