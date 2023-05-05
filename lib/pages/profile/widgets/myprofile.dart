@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:flutter_layouts/pages/home/main.dart';
+import 'package:flutter_layouts/pages/profile/widgets/posts.dart';
+
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
 
@@ -61,29 +64,39 @@ class ProfileInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0), 
+    return  Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0), 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                 Icons.arrow_back, 
-                 size: 27,
-                 color: Colors.white,
-                 ),
-                Icon(
+                GestureDetector(
+                  onTap: () {
+                     
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Home()),
+            );
+  
+                  },
+                  child: const  Icon(
+                   Icons.arrow_back, 
+                   size: 27,
+                   color: Colors.white,
+                   ),
+                )  ,
+               const Icon(
                   Icons.settings,
                   size: 27,
                   color: Colors.white,
                 ),
               ],
             ),
-             SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
-            Column(
+           const Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,6 +139,7 @@ class ProfileInfo extends StatelessWidget {
                       ],
                     
                      ),
+                     
 
                   ],
                 ),

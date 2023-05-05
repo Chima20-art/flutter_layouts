@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layouts/pages/home/widgets/appbar.dart';
 import 'package:flutter_layouts/pages/home/widgets/home_posts.dart';
+import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
 
-class Home extends StatelessWidget {
-   const  
-   Home({super.key});
+class Home extends StatefulWidget {
+
+   const  Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _selectedIndex= 0;
+
+  void _setSelectedIndex(index){
+    setState(() {
+      _selectedIndex= index;
+    });
+  }
+
+  final  List<Widget>  _widgetOptions = [
+    const HomePageContent(),
+    const Center(child: Text("Coming soooon ...",style: TextStyle(color: Colors.white),)),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +39,12 @@ class Home extends StatelessWidget {
           color: Colors.grey[850] ,
           height: double.infinity,
           width:double.infinity ,
-          child: const  HomePageContent(),
+          child: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex : 1),
         ),
+        bottomNavigationBar: MyBottomNavigationBar(
+          selectedIndex:_selectedIndex,
+          onTabChange: (index) => _setSelectedIndex(index) ,
+           ),
       ),);
     
   }

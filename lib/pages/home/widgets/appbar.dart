@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layouts/pages/profile/main.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -19,18 +20,26 @@ class MyAppBar extends StatelessWidget {
                     ],
                   ),
               
-              actions: const [
-                     IconButton(
+              actions:  [
+                    const IconButton(
                     icon: Icon(Icons.notifications, color: Colors.white,),
                     onPressed:null,
                     ),
                     Padding(
-                        padding: EdgeInsets.only(right:15),
-                      child: IconButton(
-                        icon: CircleAvatar(
-                         backgroundImage: AssetImage('assets/images/profilepic.jpg'),
-                               ),
-                        onPressed:null,
+                        padding: const EdgeInsets.only(right:15),
+                      child: GestureDetector(
+                        onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Profile()),
+                          );
+                        },
+                        child: const  IconButton(
+                          icon: CircleAvatar(
+                           backgroundImage: AssetImage('assets/images/profilepic.jpg'),
+                                 ),
+                          onPressed:null,
+                        ),
                       ),
                     ),
                     
