@@ -24,13 +24,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  int _selectedIndex = 0;
+  static int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = [
       Home(),
-      Center(child: Text('coming soon ..')),
-      Center(child: Text('coming soon ..')),
-      Profile(),
+      Center(child: Text("Coming soooon ...")),
   ];
 
 
@@ -42,45 +40,7 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold (
-        body: _widgetOptions.elementAt(_selectedIndex) ,
-        bottomNavigationBar: Container(
-                      color: Colors.black,
-                       child: Glassmorphism(
-                        blur: 100,
-                        child: GNav(
-                                     color: Colors.white,
-                                     activeColor: Colors.white,
-                                     backgroundColor: Colors.transparent,
-                                     tabBackgroundColor: Colors.grey.shade800,
-                                     gap:8,
-                                     tabs:const [
-                                       GButton(
-                        padding: EdgeInsets.symmetric(vertical: 10,horizontal: 15),
-                        icon: Icons.home,
-                        text:'Home'
-                        ),
-                        GButton(
-                       padding: EdgeInsets.symmetric(vertical: 10,horizontal: 15),
-                        icon: Icons.add_circle_outline_rounded,
-                        text:'Add'
-                        ),
-                        GButton(
-                         padding: EdgeInsets.symmetric(vertical: 10,horizontal: 15),
-                        icon: Icons.favorite_border,
-                        text:'favorites'
-                        ),
-                      ],
-                      selectedIndex: _selectedIndex,
-                      onTabChange: (index){
-                        setState(() {
-                          _selectedIndex=index;
-                        });
-                      },
-                      ),
-                                       ),
-                     )
-        ,
-
+        body: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex: 1 ) ,
         ),
         
     ),
