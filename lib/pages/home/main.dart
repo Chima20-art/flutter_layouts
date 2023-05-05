@@ -38,9 +38,9 @@ class MyHomePage extends StatelessWidget {
           color: Colors.grey[850] ,
           height: double.infinity,
           width:double.infinity ,
-          child: HomePageContent(),
+          child: const  HomePageContent(),
         ),
-         bottomNavigationBar: MyBottomNavigationBar (),
+         bottomNavigationBar:const  MyBottomNavigationBar (),
 
       ),);
     
@@ -52,13 +52,13 @@ class HomePageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  Padding(padding:  EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
+    return  const  Padding(padding:  EdgeInsets.only(top: 20.0, left: 35.0,right:35.0,),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                Text("Hello", style: TextStyle(color: Colors.grey, fontSize: 18.0,),),
                Text("John Doe", style: TextStyle(color: Colors.white, fontSize: 24.0)),
-              Expanded(child: HomePosts()),
+               Expanded(child: HomePosts()),
             ],
           ),);
   }
