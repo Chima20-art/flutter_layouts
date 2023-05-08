@@ -12,11 +12,35 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  double xOffset = 0;
+  double yOffset = 0;
+  double scaleFactor = 1;
+  bool isDrawerOpen = false;
+
+
   int _selectedIndex= 0;
 
   void _setSelectedIndex(index){
     setState(() {
       _selectedIndex= index;
+    });
+  }
+
+  void _onOpen(){
+    setState(() {
+      xOffset=220;
+      yOffset=130;
+      scaleFactor=0.7;
+      isDrawerOpen=true;
+    });
+  }
+   void _onClose(){
+    setState(() {
+      xOffset=0;
+      yOffset=0;
+      scaleFactor=1;
+      isDrawerOpen=false;
     });
   }
 
@@ -27,25 +51,30 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return  Directionality(
-      textDirection: TextDirection.ltr,
-      child: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize:  Size.fromHeight(60.0),
-            child: MyAppBar(),
-          
-        ),
-        body:  Container( 
-          color: Colors.grey[850] ,
-          height: double.infinity,
-          width:double.infinity ,
-          child: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex : 1),
-        ),
-        bottomNavigationBar: MyBottomNavigationBar(
-          selectedIndex:_selectedIndex,
-          onTabChange: (index) => _setSelectedIndex(index) ,
-           ),
-      ),);
+    return  AnimatedContainer(
+      transform: Matrix4.translationValues(xOffset, yOffset, 0)..scale(scaleFactor),
+      duration: const Duration(milliseconds: 250),
+      decoration: BoxDecoration(  borderRadius: BorderRadius.circular(10)),
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: Scaffold(
+          appBar:  PreferredSize(
+            preferredSize: const  Size.fromHeight(60.0),
+              child: MyAppBar(onOpen:_onOpen, isDrawerOpen: isDrawerOpen,onClose:_onClose),
+            
+          ),
+          body:  Container( 
+            color: Colors.grey[850] ,
+            height: double.infinity,
+            width:double.infinity ,
+            child: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex : 1),
+          ),
+          bottomNavigationBar: MyBottomNavigationBar(
+            selectedIndex:_selectedIndex,
+            onTabChange: (index) => _setSelectedIndex(index) ,
+             ),
+        ),),
+    );
     
   }
 }
