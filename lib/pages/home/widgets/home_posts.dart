@@ -39,7 +39,7 @@ class _MyHomePostsState extends State<HomePosts> {
                     mainAxisSpacing: 15,
                     childAspectRatio: (1 / 1.27),    
                     children: _listItem.take(2).map((item) => Card(
-                    color:  Colors.transparent,
+                    color:  Colors.grey[850],
                       child:  Column(
                         children: [
                           Expanded(
@@ -143,7 +143,7 @@ class _MyHomePostsState extends State<HomePosts> {
                                 physics: 
                                 const NeverScrollableScrollPhysics(),
                                 children: _listItem.skip(2).map((item) => Card(
-                                  color:  Colors.transparent,
+                    color:  Colors.grey[850],
                                   child:  Column(
                       children: [
                         Expanded(

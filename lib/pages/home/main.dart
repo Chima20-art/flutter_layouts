@@ -54,26 +54,27 @@ class _HomeState extends State<Home> {
     return  AnimatedContainer(
       transform: Matrix4.translationValues(xOffset, yOffset, 0)..scale(scaleFactor),
       duration: const Duration(milliseconds: 250),
-      decoration: BoxDecoration(  borderRadius: BorderRadius.circular(100)),
-      child: Directionality(
-        textDirection: TextDirection.ltr,
-        child: Scaffold(
-          appBar:  PreferredSize(
-            preferredSize: const  Size.fromHeight(60.0),
-              child: MyAppBar(onOpen:_onOpen, isDrawerOpen: isDrawerOpen,onClose:_onClose),
-            
-          ),
-          body:  Container( 
-            color: Colors.grey[850] ,
-            height: double.infinity,
-            width:double.infinity ,
-            child: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex : 1),
-          ),
-          bottomNavigationBar: MyBottomNavigationBar(
-            selectedIndex:_selectedIndex,
-            onTabChange: (index) => _setSelectedIndex(index) ,
-             ),
-        ),),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular( isDrawerOpen? 20: 0.0),
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Scaffold(
+            appBar:  PreferredSize(
+              preferredSize: const  Size.fromHeight(60.0),
+                child: MyAppBar(onOpen:_onOpen, isDrawerOpen: isDrawerOpen,onClose:_onClose),
+            ),
+            body:  Container( 
+              color: Colors.grey[850] ,
+              height: double.infinity,
+              width:double.infinity ,
+              child: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex : 1),
+            ),
+            bottomNavigationBar: MyBottomNavigationBar(
+              selectedIndex:_selectedIndex,
+              onTabChange: (index) => _setSelectedIndex(index) ,
+               ),
+          ),),
+      ),
     );
     
   }

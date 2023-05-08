@@ -15,7 +15,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
 
   {
     'icon': FontAwesomeIcons.plus,
-    'title' : 'Add pet'
+    'title' : 'Add post'
   },
   {
     'icon': Icons.favorite,

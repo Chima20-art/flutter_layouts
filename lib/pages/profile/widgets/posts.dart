@@ -43,7 +43,7 @@ class _MyPostsState extends State<MyPosts> {
                   mainAxisSpacing: 15,
                   childAspectRatio: (1 / 1.17),
                   children: _listItem.map((item) => Card(
-                    color:  Colors.transparent,
+                    color:  Colors.grey.shade900,
                     child:  Column(
                       children: [
                         Expanded(
