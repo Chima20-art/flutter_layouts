@@ -34,7 +34,7 @@ class _MyPostsState extends State<MyPosts> {
    child: Container(
      color: Colors.grey.shade900,
      child: GridView.count(
-                   physics: const NeverScrollableScrollPhysics(), 
+                  physics: const NeverScrollableScrollPhysics(), 
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   crossAxisCount: 2,
@@ -43,7 +43,7 @@ class _MyPostsState extends State<MyPosts> {
                   mainAxisSpacing: 15,
                   childAspectRatio: (1 / 1.17),
                   children: _listItem.map((item) => Card(
-                  color:  Colors.transparent,
+                    color:  Colors.transparent,
                     child:  Column(
                       children: [
                         Expanded(

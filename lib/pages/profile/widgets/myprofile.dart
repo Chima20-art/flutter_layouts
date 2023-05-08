@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layouts/main.dart';
 import 'dart:ui';
 import 'package:flutter_layouts/pages/home/main.dart';
 
@@ -74,7 +75,7 @@ class ProfileInfo extends StatelessWidget {
                   onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Home()),
+                        MaterialPageRoute(builder: (context) => const MyApp()),
                       );
                   },
                   child: const  Icon(

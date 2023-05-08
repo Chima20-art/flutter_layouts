@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
     return  AnimatedContainer(
       transform: Matrix4.translationValues(xOffset, yOffset, 0)..scale(scaleFactor),
       duration: const Duration(milliseconds: 250),
-      decoration: BoxDecoration(  borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(  borderRadius: BorderRadius.circular(100)),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: Scaffold(
