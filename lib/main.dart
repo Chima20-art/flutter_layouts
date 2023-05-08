@@ -28,15 +28,22 @@ class _MyAppState extends State<MyApp> {
   ];
 
 
-
+  
   // This widget is the root of your application.
   @override
  Widget build(BuildContext context) {
-    return const   SafeArea(
+    return    const SafeArea(
       child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold (
-         body:  HiddenDrawer(),
+         body: Stack(
+          children: [
+            HiddenDrawer(),
+            Home(),
+            
+          ],
+         ), 
+         
          //_widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex: 1 ) ,
         ),
         

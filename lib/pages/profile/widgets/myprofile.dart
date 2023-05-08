@@ -72,19 +72,17 @@ class ProfileInfo extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                     
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Home()),
-            );
-  
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                      );
                   },
                   child: const  Icon(
                    Icons.arrow_back, 
                    size: 27,
                    color: Colors.white,
                    ),
-                )  ,
+                ),
                const Icon(
                   Icons.settings,
                   size: 27,
