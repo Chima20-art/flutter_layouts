@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_layouts/hidden_drawer.dart';
 import 'pages/home/main.dart';
 
 
@@ -31,11 +32,12 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
  Widget build(BuildContext context) {
-    return   SafeArea(
+    return const   SafeArea(
       child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold (
-        body: _widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex: 1 ) ,
+         body:  HiddenDrawer(),
+         //_widgetOptions.elementAt(_selectedIndex < _widgetOptions.length ? _selectedIndex: 1 ) ,
         ),
         
     ),
