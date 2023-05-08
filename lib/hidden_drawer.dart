@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layouts/pages/home/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 
 class HiddenDrawer extends StatefulWidget {
@@ -56,7 +54,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
               child: Row(
                 children: [
                   Icon(element['icon'],color: Colors.grey.shade700,size: 25,),
-                  SizedBox(width: 10,),
+                 const SizedBox(width: 10,),
                   Text(element['title'],style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.bold,fontSize: 15))
                 ],
 

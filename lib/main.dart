@@ -20,12 +20,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  final int _selectedIndex = 0;
+  // final int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = [
-      Home(),
-      Center(child: Text("Coming soooon ...")),
-  ];
+  // static const List<Widget> _widgetOptions = [
+  //     Home(),
+  //     Center(child: Text("Coming soooon ...")),
+  // ];
 
 
   
