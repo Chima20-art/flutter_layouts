@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layouts/main.dart';
 import 'dart:ui';
-import 'package:flutter_layouts/pages/home/main.dart';
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
@@ -40,7 +39,7 @@ class MyProfile extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
+               SizedBox(
                 width:double.infinity,
                 height: 220,
                 child: Column(
@@ -93,7 +92,7 @@ class ProfileInfo extends StatelessWidget {
             ),
             const SizedBox(height: 10,),
 
-           const Column(
+            Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layouts/pages/home/main.dart';
+import 'package:flutter_layouts/main.dart';
 import 'widgets/myprofile.dart';
 import 'widgets/posts.dart';
 import 'package:flutter_layouts/pages/widgets/navigation_bar.dart';
@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
                  
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Home())
+                    MaterialPageRoute(builder: (context) => const MyApp()),
                   );
               }
             },
@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return  SingleChildScrollView(
                    child: Column(
                     children:  [        
                       MyProfile(),
